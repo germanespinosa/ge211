@@ -63,7 +63,8 @@ target_include_directories(ge211
         ${SDL2_INCLUDE_DIRS}
         ${SDL2_IMAGE_INCLUDE_DIRS}
         ${SDL2_MIXER_INCLUDE_DIRS}
-        ${SDL2_TTF_INCLUDE_DIRS})
+        ${SDL2_TTF_INCLUDE_DIRS}
+        include)
 
 target_include_directories(ge211
     PUBLIC
