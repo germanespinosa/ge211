@@ -20,12 +20,12 @@ find_package(SDL2_ttf   REQUIRED)
 ###
 ### MAIN LIBRARY SETUP
 ###
-
 add_library(ge211
         include/ge211.h
         include/ge211_forward.h
         include/ge211_time.h
         include/ge211_util.h
+
         src/ge211_base.cpp
         src/ge211_color.cpp
         src/ge211_engine.cpp
@@ -63,11 +63,11 @@ target_include_directories(ge211
         ${SDL2_INCLUDE_DIRS}
         ${SDL2_IMAGE_INCLUDE_DIRS}
         ${SDL2_MIXER_INCLUDE_DIRS}
-        ${SDL2_TTF_INCLUDE_DIRS}
-        include)
+        ${SDL2_TTF_INCLUDE_DIRS})
 
 target_include_directories(ge211
-    PUBLIC
+    PRIVATE
+        include
         ${SDL2_INCLUDE_DIRS}
         ${SDL2_IMAGE_INCLUDE_DIRS}
         ${SDL2_MIXER_INCLUDE_DIRS}
