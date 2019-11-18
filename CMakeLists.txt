@@ -9,7 +9,6 @@ project(ge211
 ###
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/Modules")
-#add_subdirectory(3rdparty/utf8-cpp)
 
 find_package(Utf8-cpp   REQUIRED)
 find_package(SDL2       REQUIRED)
@@ -39,8 +38,6 @@ add_library(ge211
         src/ge211_session.cpp
         src/ge211_sprites.cpp
         src/ge211_window.cpp)
-
-#get_target_property( UTF8-CPP_INTERFACE_INCLUDE_DIRECTORIES utf8-cpp INTERFACE_INCLUDE_DIRECTORIES )
 
 set_target_properties(ge211
     PROPERTIES
@@ -106,7 +103,6 @@ install(DIRECTORY Modules/ DESTINATION ${CMAKE_ROOT}/Modules)
 install(EXPORT Ge211Config
         DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/Ge211
         EXPORT_LINK_INTERFACE_LIBRARIES )
-install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Ge211/Ge211Config.cmake \"MESSAGE( \"HOLA\n\")\n\") ")
 
 install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Ge211/Ge211Config.cmake \"find_package(Utf8-cpp   REQUIRED)\n\") ")
 install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Ge211/Ge211Config.cmake \"find_package(SDL2   REQUIRED)\n\") ")
