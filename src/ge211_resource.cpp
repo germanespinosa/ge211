@@ -11,6 +11,7 @@ namespace ge211 {
 using namespace detail;
 
 static const char* search_prefixes[] = {
+        "",
         GE211_RESOURCES,
         "Resources/",
         "../Resources/",
